@@ -34,3 +34,10 @@
     margin-right: 2px;
     margin-top: -2px;
 }
+
+.body-terminal>h1{
+    color:white;
+    font-family: Consolas,monaco,monospace !important;
+    font-size: 1em;
+    margin-left: 5px;
+}
