@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="row">
         <div className="col-6">
           <ul className="footer-menu">
-            <li><PhoneAndroidIcon fontSize="small" className="call-icon"/>Number</li>
+            <li><PhoneAndroidIcon fontSize="small" className="call-icon"/> Number</li>
             <li>About</li>
             <li>Your privacy</li>
             <li>2021 Web-DEV, INC</li>
