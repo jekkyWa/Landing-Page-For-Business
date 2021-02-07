@@ -1,0 +1,36 @@
+.content-block-one>h1{
+    font-family: Quicksand-Light;
+    color:white;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 100;
+    margin: 45px;
+}
+
+.terminal{
+    background-color: rgba(0, 0, 0, 0.726);
+    height: 300px;
+    margin: 0 30% 0 30%;
+}
+
+.header-terminal{
+    padding: 0px;
+}
+
+.icon-terminal{
+    margin-right: 5px;
+    
+}
+
+.way>h1{
+    font-family: Consolas,monaco,monospace !important;
+    font-size: 1em;
+    color: white;
+}
+
+.panel-icon{
+    color:white;
+    text-align: right;
+    margin-right: 2px;
+    margin-top: -2px;
+}

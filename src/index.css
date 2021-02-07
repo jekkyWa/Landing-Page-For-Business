@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  cursor: url("./cursor/curs.cur"), auto;
+  background: linear-gradient(130deg, black, white);
+}
+
+@font-face {
+  font-family: Quicksand-Light; /* Имя шрифта */
+  src: url(../src/fonts/Quicksand-Light.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face{
+    font-family: Quicksand-Bold;
+    src: url(../src/fonts//Quicksand-Bold.otf)
+}
+

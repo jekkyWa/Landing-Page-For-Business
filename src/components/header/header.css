@@ -1,0 +1,52 @@
+.left-block-header {
+  padding: 15px;
+  margin-left: 40px; 
+}
+
+.logo-header {
+  display: inline-block;
+  font-size: 1.2em;
+  font-family: Quicksand-Light;
+  color:white;
+}
+
+.split {
+  margin-left: 10px;
+  font-size: 1em;
+  font-weight: 0;
+  vertical-align: 1px;
+  color: rgb(139, 139, 139);
+}
+
+.mail-header-block{
+  display: inline-block;
+}
+
+.mail-header {
+  margin-left: 10px;
+  color:rgb(139, 139, 139);
+}
+
+.mail-icon-header {
+  margin-right: 5px;
+  height: 15px !important;
+  vertical-align: -2px;
+}
+
+.name-mail {
+  font-size: 0.8em !important;
+  vertical-align: 2px;
+  font-weight: 600;
+}
+
+.contact-block {
+  padding: 15px;
+  text-align: right;
+  padding-right: 50px;
+}
+
+.button-right-block-header {
+  display: inline-block;
+  margin-right: 3px;
+}
+
