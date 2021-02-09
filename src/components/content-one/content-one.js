@@ -5,6 +5,7 @@ import CancelPresentationIcon from "@material-ui/icons/CancelPresentation";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 import MinimizeIcon from "@material-ui/icons/Minimize";
 import { _arrOne, _arrTwo } from "./data";
+import Footer from "../footer";
 
 const ContentOne = () => {
   const [dataPrintingOne, setDataPrintingOne] = useState([]);
@@ -74,6 +75,7 @@ const ContentOne = () => {
           <h1>{`${newLineTerminal} ${dataPrintingTwo.join("")}`}</h1>
         </div>
       </div>
+      <Footer contentOne={true}/>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ContentOne from "../content-one";
-import Footer from "../footer";
 import Header from "../header";
 import ParticleComponent from "../particles/particles";
 import "./app.css";
@@ -18,8 +17,6 @@ const App = () => {
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-
-  
 
   return (
     <div>
@@ -49,8 +46,7 @@ const App = () => {
             }}
           />
           <Header />
-          <ContentOne />
-          <Footer/>
+          <ContentOne />   
         </div>
       </div>
     </div>
