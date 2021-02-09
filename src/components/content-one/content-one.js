@@ -4,58 +4,99 @@ import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 import MinimizeIcon from "@material-ui/icons/Minimize";
+import { _arrOne, _arrTwo } from "./data";
+import { Animated } from "react-animated-css";
 
 const ContentOne = () => {
-  const _arr = [
-    "C",
-    "r",
-    "e",
-    "a",
-    "t",
-    "e",
-    " ",
-    "q",
-    "u",
-    "a",
-    "l",
-    "l",
-    "i",
-    "t",
-    "y",
-    " ",
-    "p",
-    "r",
-    "o",
-    "j",
-    "e",
-    "c",
-    "t",
-  ];
+  const [dataPrintingOne, setDataPrintingOne] = useState([]);
+  const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
+  const [styleTypeOne, setStyleTypeOne] = useState(false);
+  const [styleTypeTwo, setStyleTypeTwo] = useState(false);
+  const [styleTypeThree, setStyleTypeThree] = useState(false);
+  const [newLine, setNewLine] = useState(false);
 
-  const [data, setData] = useState([]);
-
-  const add = () => {
+  const printing = (arr, func) => {
     let i = 0;
-    let max = _arr.length;
+    let max = arr.length;
     let _interval = setInterval(function () {
       if (i < max) {
-        setData(_arr.filter((_, index) => index <= i));
+        func(arr.filter((_, index) => index <= i));
         i++;
       } else {
         clearInterval(_interval);
+        setTimeout(() => {
+          setNewLine(true);
+        }, 1000);
       }
     }, 100);
   };
 
   useEffect(() => {
     setTimeout(() => {
-      add();
-    }, 2000);
+      printing(_arrOne, setDataPrintingOne);
+    }, 3000);
+    setTimeout(() => {
+      printing(_arrTwo, setDataPrintingTwo);
+    }, 8000);
+    setTimeout(() => {
+      setStyleTypeOne(true);
+    }, 200);
+    setTimeout(() => {
+      setStyleTypeTwo(true);
+    }, 1000);
+    setTimeout(() => {
+      setStyleTypeThree(true);
+    }, 1800);
   }, []);
+
+  const styleOne = styleTypeOne ? "visiable" : "not-visiable";
+  const styleTwo = styleTypeTwo ? "visiable" : "not-visiable";
+  const styleThree = styleTypeThree ? "visiable" : "not-visiable";
+
+  const newLineTerminal = newLine ? "Web-DEV:~" : "";
 
   return (
     <div className="content-block-one">
-      <h1>Why pay too much for quality when you can use "Web-DEV"</h1>
+      <h1>
+        <Animated
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          animationInDuration={2000}
+          isVisible={true}
+          className={styleOne}
+        >
+          Why pay too much
+        </Animated>
+        <Animated
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          animationInDuration={2000}
+          isVisible={true}
+          className={styleTwo}
+        >
+          for quality
+        </Animated>
+        <Animated
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          animationInDuration={2000}
+          isVisible={true}
+          className={styleThree}
+        >
+          when you can use
+        </Animated>
+        <h1 className="center">
+          <Animated
+            animationIn="fadeIn"
+            animationOut="fadeOut"
+            animationInDuration={2000}
+            isVisible={true}
+            className={styleThree}
+          >
+            "Web-DEV"{" "}
+          </Animated>
+        </h1>
+      </h1>
       <div className="terminal">
         <div className="container-fluid header-terminal">
           <div className="row">
@@ -67,15 +108,16 @@ const ContentOne = () => {
             </div>
             <div className="col-4 ">
               <div className="panel-icon">
-                <MinimizeIcon />
-                <AspectRatioIcon />
-                <CancelPresentationIcon />
+                <MinimizeIcon className=""/>
+                <AspectRatioIcon className="" />
+                <CancelPresentationIcon className="cancel-terminal" />
               </div>
             </div>
           </div>
         </div>
         <div className="body-terminal">
-          <h1>Web-DEV:\~ {data.join("")} </h1>
+          <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
+          <h1>{`${newLineTerminal} ${dataPrintingTwo.join("")}`}</h1>
         </div>
       </div>
     </div>
