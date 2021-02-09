@@ -13,26 +13,59 @@
   vertical-align: -4px;
 }
 
-
-.number-not-visiable {
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
+.dot>li{
+  display: inline;
+  margin-right: 20%;
+  color: rgb(68,68,68)
 }
 
 .number:hover ~ .inf-footer {
-  opacity: 0;
+  opacity: 1; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: disableInf 1s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards;
+  animation-delay: 0.1s; /* Задержка перед началом */
+}
+
+@keyframes disableInf{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 .number:hover ~ .number-not-visiable {
-  opacity: 1;
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: showNumber 1s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards;
+  animation-delay: 1s; /* Задержка перед началом */
+}
+
+@keyframes showNumber{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 .number-not-visiable {
   position: fixed;
   opacity: 0;
 }
+
+.copy{
+  position: fixed;
+  opacity: 0;
+}
+
+
+
+
 
 
 
