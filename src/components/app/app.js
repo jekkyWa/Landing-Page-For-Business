@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ContentOne from "../content-one";
+import ContentOne from "../content";
 import Header from "../header";
 import ParticleComponent from "../particles/particles";
 import "./app.css";

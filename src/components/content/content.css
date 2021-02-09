@@ -1,0 +1,143 @@
+/* conent one */
+
+.content-block-one > h1 {
+  font-family: Quicksand-Light;
+  color: white;
+  letter-spacing: 3px;
+  font-weight: 100;
+  margin: 45px;
+  height: 95px;
+  text-align: center;
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.726);
+  height: 300px;
+  margin: 0 30% 0 30%;
+}
+
+.header-terminal {
+  padding: 0px;
+}
+
+.icon-terminal {
+  margin-right: 5px;
+}
+
+.way > h1 {
+  font-family: Consolas, monaco, monospace !important;
+  font-size: 1em;
+  color: white;
+}
+
+.panel-icon {
+  color: white;
+  text-align: right;
+  margin-right: 2px;
+  margin-top: -2px;
+}
+
+.body-terminal > h1 {
+  color: white;
+  font-family: Consolas, monaco, monospace !important;
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.not-visiable {
+  display: none;
+}
+
+.visiable {
+  display: inline;
+  margin-left: 15px;
+}
+
+/* animation */
+
+.one {
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+  animation-delay: 0.5s; /* Задержка перед началом */
+}
+
+.two {
+  opacity: 0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  margin-left: 15px;
+}
+
+.three {
+  opacity: 0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+  margin-left: 15px;
+}
+
+.four {
+  opacity: 0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 3.5s;
+  margin-left: 15px;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* conent two */
+
+.contnet-two-body {
+  min-height: 75vh;
+}
+
+.contnet-two-body > h1 {
+  color: white;
+  font-family: Quicksand-Light;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 70px;
+}
+
+.contnet-two-body > p {
+  color: white;
+  font-family: Quicksand-Light;
+  font-size: 1.4em;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.contnet-two-body-img {
+  margin-top: 90px;
+  width: 70%;
+}
+
+.contnet-two-body-img > img {
+  width: 90%;
+  margin-left: 15px;
+  -webkit-filter: drop-shadow(-5px -3px 10px #000);
+  filter: drop-shadow(-5px -3px 10px #000);
+}
+
+/* screen */
+
+@media screen and (max-width: 900px) {
+  .content-block-one > h1 {
+    margin-top: 20px;
+    height: 120px;
+  }
+}

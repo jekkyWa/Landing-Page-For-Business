@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./footer.css";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const Footer = ({ contentOne }) => {
-  const [styleMouse, setStyleMouse] = useState(false);
+const Footer = ({ contentOne, selectTwo, contentTwo }) => {
+  const activeOne = contentOne ? "active" : "";
+  const activeTwo = contentTwo ? "active" : "";
 
-  const active = contentOne ? "active" : "";
+  const hide = () => {
+    document.getElementsByClassName("cursor")[0].style.display = "block";
+  };
+
+  const uncovered = () => {
+    document.getElementsByClassName("cursor")[0].style.display = "none";
+  };
 
   return (
     <div className="container footer">
@@ -27,19 +34,20 @@ const Footer = ({ contentOne }) => {
           <ul className="dot">
             <li>
               <FiberManualRecordIcon
-                className={active}
-                onMouseOver={() => {
-                  document.getElementsByClassName("cursor")[0].style.display =
-                    "none";
-                }}
-                onMouseOut={() => {
-                  document.getElementsByClassName("cursor")[0].style.display =
-                    "block";
-                }}
+                className={`${activeOne} select-dot`}
+                onMouseOver={() => uncovered()}
+                onMouseOut={() => hide()}
               />
             </li>
             <li>
-              <FiberManualRecordIcon />
+              <FiberManualRecordIcon
+                onMouseOver={() => uncovered()}
+                onMouseOut={() => hide()}
+                className={`${activeTwo} select-dot`}
+                onClick={() => {
+                  selectTwo(2);
+                }}
+              />
             </li>
             <li>
               <FiberManualRecordIcon />
