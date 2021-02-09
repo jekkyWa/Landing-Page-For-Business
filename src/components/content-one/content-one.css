@@ -5,6 +5,7 @@
   font-weight: 100;
   margin: 45px;
   height: 95px;
+  text-align: center;
 }
 
 .terminal {
@@ -45,12 +46,63 @@
   display: none;
 }
 
-.visiable{
+.visiable {
   display: inline;
   margin-left: 15px;
 }
 
-.center {
-  text-align: center;
+/* animation */
+
+.one {
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+  animation-delay: 0.5s; /* Задержка перед началом */
 }
 
+.two {
+  opacity: 0; 
+  transition: 1s; 
+  animation: show 2s 1; 
+  animation-fill-mode: forwards; 
+  animation-delay: 1.5s; 
+  margin-left: 15px;
+}
+
+.three {
+  opacity: 0; 
+  transition: 1s; 
+  animation: show 2s 1; 
+  animation-fill-mode: forwards; 
+  animation-delay: 2.5s; 
+  margin-left: 15px;
+}
+
+.four {
+  opacity: 0; 
+  transition: 1s; 
+  animation: show 2s 1; 
+  animation-fill-mode: forwards; 
+  animation-delay: 3.5s; 
+  margin-left: 15px;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* screen */
+
+@media screen and (max-width:900px){
+  .content-block-one>h1{
+    margin-top: 20px;
+    height:120px;
+  }
+}

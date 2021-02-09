@@ -1,12 +1,11 @@
 .cursor {
     position: fixed;
-    left: 0;
-    top: 0;
+    left: -16px;
+    top: -16px;
     width: 40px;
     height: 40px;
     border-radius: 100%;
     border: 1px solid rgba(2, 0, 0, 0.699);
     background-color: rgba(255, 255, 255, 0.082);
-    z-index: 99999;
 }
   

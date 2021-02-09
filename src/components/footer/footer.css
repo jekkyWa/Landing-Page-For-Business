@@ -1,14 +1,39 @@
-.footer{
-    margin-top:55px;
+.footer {
+  margin-top: 55px;
 }
 
-.footer-menu>li{
-    display: inline;
-    margin-right: 25px;
-    font-family: Quicksand-Light;
-    color: white;
+.footer-menu > li {
+  display: inline;
+  margin-right: 25px;
+  font-family: Quicksand-Light;
+  color: white;
 }
 
-.call-icon{
-    vertical-align: -4px;
+.call-icon {
+  vertical-align: -4px;
 }
+
+
+.number-not-visiable {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.number:hover ~ .inf-footer {
+  opacity: 0;
+}
+
+.number:hover ~ .number-not-visiable {
+  opacity: 1;
+}
+
+.number-not-visiable {
+  position: fixed;
+  opacity: 0;
+}
+
+
+
+

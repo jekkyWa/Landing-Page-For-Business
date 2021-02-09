@@ -9,8 +9,8 @@ const App = () => {
   const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
   useEffect(() => {
     const moveCursor = (e) => {
-      const x = e.clientX - 4;
-      const y = e.clientY - 3;
+      const x = e.clientX;
+      const y = e.clientY;
       setCursorXY({ x, y });
     };
     window.addEventListener("mousemove", moveCursor);
