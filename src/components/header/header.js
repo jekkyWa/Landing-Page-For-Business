@@ -4,19 +4,23 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import FacebookIcon from "@material-ui/icons/Facebook";
 
+
 const Header = () => {
   return (
     <div className="container-fluid header">
       <div className="row">
         <div className="col-8">
           <div className="left-block-header">
-            <h1 className="logo-header">Web-DEV</h1>{" "}
+            <h1 className="logo-header">Web-DEV</h1>
             <div className="mail-header-block">
-            <span className="split"> | </span>
-            <span className="mail-header">
-              <MailOutlineIcon fontSize="small" className="mail-icon-header" />
-              <span className="name-mail">nikulshin_vlad01@mail.ru</span>
-            </span>
+              <span className="split"> | </span>
+              <span className="mail-header">
+                <MailOutlineIcon
+                  fontSize="small"
+                  className="mail-icon-header"
+                />
+                <span className="name-mail">nikulshin_vlad01@mail.ru</span>
+              </span>
             </div>
           </div>
         </div>

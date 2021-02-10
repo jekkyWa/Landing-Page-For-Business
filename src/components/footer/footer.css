@@ -20,42 +20,25 @@
 }
 
 .number:hover ~ .inf-footer {
-  opacity: 1; /*Элемент полностью прозрачный (невидимый)*/
-  transition: 1s; /*Скорость перехода состояния элемента*/
-  animation: disableInf 1s 1; /* Указываем название анимации, её время и количество повторов*/
-  animation-fill-mode: forwards;
-  animation-delay: 0.1s; /* Задержка перед началом */
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition-delay: 0s;
 }
 
-@keyframes disableInf {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.inf-footer {
+  opacity: 1;
+  transition: opacity .5s linear;
+  transition-delay: .5s;
 }
 
 .number:hover ~ .number-not-visiable {
-  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
-  transition: 1s; /*Скорость перехода состояния элемента*/
-  animation: showNumber 1s 1; /* Указываем название анимации, её время и количество повторов*/
-  animation-fill-mode: forwards;
-  animation-delay: 1s; /* Задержка перед началом */
-}
-
-@keyframes showNumber {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  opacity: 1;
+  transition-delay: .5s;
 }
 
 .number-not-visiable {
   position: fixed;
   opacity: 0;
+  transition: opacity .5s linear;
 }
 
 .active {

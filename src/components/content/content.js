@@ -14,7 +14,7 @@ const ContentOne = () => {
   const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
 
   const [newLine, setNewLine] = useState(false);
-
+  const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [update, setUpdate] = useState(1);
 
   // Content One
@@ -36,12 +36,12 @@ const ContentOne = () => {
   };
 
   const selectTwo = (value) => {
-    if (value == 2) {
-      setTimeout(() => {
-        setUpdate(value);
-      }, 2000);
-    }
+    setTimeout(() => {
+      setUpdate(value);
+    }, 1000);
   };
+
+  const styleOutAnim = animationOutBlock ? "anim-out" : "";
 
   //Content two
 
@@ -113,44 +113,76 @@ const ContentOne = () => {
           </div>
         </div>
 
-        <Footer contentTwo={true} />
+        <Footer contentTwo={true} selectTwo={selectTwo} />
       </div>
     );
   }
-  return (
-    <div className="content-block-one">
-      <h1>
-        <span className="one">Why pay too much</span>
-        <span className="two">for quality</span>
-        <span className="three">when you can use</span>
-        <span className="four">"Web-DEV"</span>
-      </h1>
-      <div className="terminal">
-        <div className="container-fluid header-terminal">
-          <div className="row">
-            <div className="col-8 way">
-              <h1>
-                <IndeterminateCheckBoxIcon className="icon-terminal" />
-                Web-DEV:\Creating_your_Project
-              </h1>
-            </div>
-            <div className="col-4 ">
-              <div className="panel-icon">
-                <MinimizeIcon />
-                <AspectRatioIcon />
-                <CancelPresentationIcon />
+  //content one
+  if (update == 1) {
+    return (
+      <div className="content-block-one">
+        <h1>
+          <span className={`one ${styleOutAnim}`}>Why pay too much</span>
+          <span className={`two ${styleOutAnim}`}>for quality</span>
+          <span className={`three ${styleOutAnim}`}>when you can use</span>
+          <span className={`four ${styleOutAnim}`}>"Web-DEV"</span>
+        </h1>
+        <div className={`terminal ${styleOutAnim}`}>
+          <div className="container-fluid header-terminal">
+            <div className="row">
+              <div className="col-8 way">
+                <h1>
+                  <IndeterminateCheckBoxIcon className="icon-terminal" />
+                  Web-DEV:\Creating_your_Project
+                </h1>
+              </div>
+              <div className="col-4 ">
+                <div className="panel-icon">
+                  <MinimizeIcon />
+                  <AspectRatioIcon />
+                  <CancelPresentationIcon />
+                </div>
               </div>
             </div>
           </div>
+          <div className="body-terminal">
+            <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
+            <h1>{`${newLineTerminal} ${dataPrintingTwo.join("")}`}</h1>
+          </div>
         </div>
-        <div className="body-terminal">
-          <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
-          <h1>{`${newLineTerminal} ${dataPrintingTwo.join("")}`}</h1>
-        </div>
+        <Footer contentOne={true} selectTwo={selectTwo} />
       </div>
-      <Footer contentOne={true} selectTwo={selectTwo} />
-    </div>
-  );
+    );
+  }
+
+  //content three
+
+  if (update == 3) {
+    return (
+      <div className="content-block-one">
+        <h1>Sample projects</h1>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-6">
+            <div className="test">
+              <h2>Instaclone</h2>
+            </div>
+            <div className="test">
+              <h2>Pizza-shop</h2>
+            </div>
+            <div className="test">
+              <h2>Todo</h2>
+            </div>
+            <div className="test">
+              <h2>Task-manager</h2>
+            </div>
+            </div>
+          </div>
+        </div>
+        <Footer contentThree={true} selectTwo={selectTwo} />
+      </div>
+    );
+  }
 };
 
 export default ContentOne;

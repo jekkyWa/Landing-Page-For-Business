@@ -99,6 +99,25 @@
   }
 }
 
+.anim-out{
+  opacity: 1;
+  transition: 1s;
+  animation: hidden 1s 1;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+@keyframes hidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
 /* conent two */
 
 .contnet-two-body {
@@ -131,6 +150,24 @@
   margin-left: 15px;
   -webkit-filter: drop-shadow(-5px -3px 10px #000);
   filter: drop-shadow(-5px -3px 10px #000);
+}
+
+/* content three*/
+
+.test>h2{
+  color: white;
+  font-family: Quicksand-Light;
+  font-size: 1.2em;
+}
+
+.test{
+  background-color: rgba(219, 219, 219, 0.377);
+  padding: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  margin-bottom: 10px;
+  margin-left: 15px;
+  border-radius: 3px;
+  box-shadow:-1px -1px 10px rgba(0, 0, 0, 0.253);
 }
 
 /* screen */
