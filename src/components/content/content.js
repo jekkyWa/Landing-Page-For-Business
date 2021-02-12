@@ -255,17 +255,30 @@ const ContentOne = () => {
     return (
       <div className="container-fluid">
         <div className="send-request">
-          <div >
+          <h1>Enter your details in the field below</h1>
+          <div>
             <input
               className="title-send"
-              placeholder="Input Two"
+              placeholder="Enter project subject"
               onMouseOver={() => uncovered()}
               onMouseOut={() => hide()}
             />
           </div>
           <div>
-            <input className="title-body" placeholder="Input One" />
+            <textarea
+              className="title-body"
+              placeholder="Enter project description"
+              onMouseOver={() => uncovered()}
+              onMouseOut={() => hide()}
+            />
           </div>
+          <button
+            className="button-send"
+            onMouseOver={() => uncovered()}
+            onMouseOut={() => hide()}
+          >
+            Send project data
+          </button>
         </div>
         <Footer contentFour={true} selectTwo={selectTwo} />
       </div>
