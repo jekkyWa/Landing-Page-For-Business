@@ -3,10 +3,12 @@ import "./footer.css";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const Footer = ({ contentOne, selectTwo, contentTwo, contentThree }) => {
+const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }) => {
   const activeOne = contentOne ? "active" : "";
   const activeTwo = contentTwo ? "active" : "";
   const activeThree = contentThree ? "active" : "";
+  const activeFour = contentFour ? "active" : "";
+  
 
   const hide = () => {
     document.getElementsByClassName("cursor")[0].style.display = "block";
@@ -67,7 +69,7 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree }) => {
               <FiberManualRecordIcon
                 onMouseOver={() => uncovered()}
                 onMouseOut={() => hide()}
-                className={`select-dot`}
+                className={`${activeFour} select-dot`}
                 onClick={() => {
                   selectTwo(4);
                 }}

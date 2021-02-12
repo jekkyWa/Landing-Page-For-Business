@@ -8,6 +8,14 @@ import { _arrOne, _arrTwo } from "./data";
 import Footer from "../footer";
 import Img_1 from "../../image/img_1.png";
 import { Animated } from "react-animated-css";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LocalPizzaIcon from "@material-ui/icons/LocalPizza";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import Example_1 from "../../image/example_1.png";
+import IconButton from "@material-ui/core/IconButton";
 
 const ContentOne = () => {
   const [dataPrintingOne, setDataPrintingOne] = useState([]);
@@ -16,6 +24,21 @@ const ContentOne = () => {
   const [newLine, setNewLine] = useState(false);
   const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [update, setUpdate] = useState(1);
+
+  const [dataSlide, setDataSlide] = useState([
+    "I tried to write an Instagram clone and implement all the main functions of this platform",
+    "2",
+    "3",
+    "4",
+  ]);
+  const [dataDescriptionSlide, setDataDescriptionSlide] = useState([
+    "The project is implemented using the React framework and the back-end is implemented on node.js, mongo",
+    "2",
+    "3",
+    "4",
+  ]);
+
+  const [numberSlide, setNumberSlide] = useState(0);
 
   // Content One
 
@@ -159,27 +182,79 @@ const ContentOne = () => {
 
   if (update == 3) {
     return (
-      <div className="content-block-one">
-        <h1>Sample projects</h1>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-6">
-            <div className="test">
-              <h2>Instaclone</h2>
+      <div className="content-block-one container-fluid">
+        <div className="row">
+          <div className="col-6">
+            <div className="sample-project">
+              <h1>Sample projects</h1>
             </div>
-            <div className="test">
-              <h2>Pizza-shop</h2>
+            <div className="row slider">
+              <div className="col-3">
+                <IconButton>
+                  <NavigateBeforeIcon
+                    className="arrow-before"
+                    fontSize="large"
+                    onClick={() => {
+                      numberSlide == 0
+                        ? setNumberSlide(3)
+                        : setNumberSlide(numberSlide - 1);
+                    }}
+                  />
+                </IconButton>
+              </div>
+              <div className="col-6 project-name">
+                <h1>Instaclone</h1>
+              </div>
+              <div className="col-3">
+                <IconButton>
+                  <NavigateNextIcon
+                    className="arrow-next"
+                    fontSize="large"
+                    onClick={() => {
+                      numberSlide == 3
+                        ? setNumberSlide(0)
+                        : setNumberSlide(numberSlide + 1);
+                    }}
+                  />
+                </IconButton>
+              </div>
             </div>
-            <div className="test">
-              <h2>Todo</h2>
+            <div className="description">
+              <p>{dataSlide[numberSlide]}</p>
             </div>
-            <div className="test">
-              <h2>Task-manager</h2>
+            <div className="slider-icons">
+              <InstagramIcon fontSize="large" className="slider-icon" />
+              <LocalPizzaIcon fontSize="large" className="slider-icon" />
+              <ListAltIcon fontSize="large" className="slider-icon" />
+              <AssignmentIcon fontSize="large" className="slider-icon" />
             </div>
+          </div>
+          <div className="col-6 img-project">
+            <img src={Example_1} />
+            <div className="description-img">
+              <h2>{dataDescriptionSlide[numberSlide]}</h2>
             </div>
           </div>
         </div>
         <Footer contentThree={true} selectTwo={selectTwo} />
+      </div>
+    );
+  }
+
+  //content four
+
+  if (update == 4) {
+    return (
+      <div className="container-fluid">
+        <div className="send-request">
+          <div>
+          <input className="title-send" placeholder="Input Two"/>
+          </div>
+          <div>
+          <input className="title-body" placeholder="Input One"/>
+          </div>
+        </div>
+        <Footer contentFour={true} selectTwo={selectTwo} />
       </div>
     );
   }

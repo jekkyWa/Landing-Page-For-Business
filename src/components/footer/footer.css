@@ -1,5 +1,9 @@
 .footer {
   margin-top: 55px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-menu > li {
@@ -26,19 +30,19 @@
 
 .inf-footer {
   opacity: 1;
-  transition: opacity .5s linear;
-  transition-delay: .5s;
+  transition: opacity 0.5s linear;
+  transition-delay: 0.5s;
 }
 
 .number:hover ~ .number-not-visiable {
   opacity: 1;
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 
 .number-not-visiable {
   position: fixed;
   opacity: 0;
-  transition: opacity .5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .active {
@@ -47,19 +51,16 @@
   border-radius: 100% !important;
 }
 
-.select-dot:hover{
+.select-dot:hover {
   border: 1px solid rgb(68, 68, 68);
   border-radius: 100%;
   cursor: none;
 }
 
-.active:hover{
+.active:hover {
   cursor: none;
 }
 
 .active:hover + .cursor {
-  display: none !important; 
+  display: none !important;
 }
-
-
-
