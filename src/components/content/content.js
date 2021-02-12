@@ -21,6 +21,14 @@ const ContentOne = () => {
   const [dataPrintingOne, setDataPrintingOne] = useState([]);
   const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
 
+  const hide = () => {
+    document.getElementsByClassName("cursor")[0].style.display = "block";
+  };
+
+  const uncovered = () => {
+    document.getElementsByClassName("cursor")[0].style.display = "none";
+  };
+
   const [newLine, setNewLine] = useState(false);
   const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [update, setUpdate] = useState(1);
@@ -247,11 +255,16 @@ const ContentOne = () => {
     return (
       <div className="container-fluid">
         <div className="send-request">
-          <div>
-          <input className="title-send" placeholder="Input Two"/>
+          <div >
+            <input
+              className="title-send"
+              placeholder="Input Two"
+              onMouseOver={() => uncovered()}
+              onMouseOut={() => hide()}
+            />
           </div>
           <div>
-          <input className="title-body" placeholder="Input One"/>
+            <input className="title-body" placeholder="Input One" />
           </div>
         </div>
         <Footer contentFour={true} selectTwo={selectTwo} />

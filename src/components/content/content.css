@@ -231,6 +231,8 @@
 
 .send-request{
   text-align: center;
+  margin-top: 100px;
+ 
 }
 
 .title-send{
@@ -238,6 +240,7 @@
   width: 40%;
   background-color: rgba(0, 0, 0, 0.452);
   border: 1px solid rgba(0, 0, 0, 0.507);
+ 
 }
 
 .title-body{
@@ -246,6 +249,7 @@
   width: 40%;
   background-color: rgba(0, 0, 0, 0.452);
   border: 1px solid rgba(0, 0, 0, 0.507);
+  cursor: pointer;
 }
 
 /* screen */
