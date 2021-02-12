@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ContentOne from "../content";
+import Content from "../content";
 import Header from "../header";
 import ParticleComponent from "../particles/particles";
 import "./app.css";
@@ -46,7 +46,7 @@ const App = () => {
             }}
           />
           <Header />
-          <ContentOne />   
+          <Content/>   
         </div>
       </div>
     </div>

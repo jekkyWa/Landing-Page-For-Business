@@ -1,3 +1,3 @@
-import ContentOne from './content'
+import Content from './content'
 
-export default ContentOne
+export default Content

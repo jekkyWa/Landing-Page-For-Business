@@ -25,7 +25,8 @@ const Footer = ({
   };
 
   const selectNewPage = (numberPage) => {
-    const statePage = update == 1 ? false : true;
+    const statePage = numberPage == 1 ? true : false;
+    console.log(statePage)
     selectTwo(numberPage, statePage);
   };
 

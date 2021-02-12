@@ -58,7 +58,7 @@
 .one {
   opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
   transition: 1s; /*Скорость перехода состояния элемента*/
-  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation: show 1.5s 1; /* Указываем название анимации, её время и количество повторов*/
   animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
   animation-delay: 0.5s; /* Задержка перед началом */
 }
@@ -66,7 +66,7 @@
 .two {
   opacity: 0;
   transition: 1s;
-  animation: show 2s 1;
+  animation: show 1.5s 1;
   animation-fill-mode: forwards;
   animation-delay: 1.5s;
   margin-left: 15px;
@@ -74,7 +74,7 @@
 
 .three {
   opacity: 0;
-  transition: 1s;
+  transition: 1.5s;
   animation: show 2s 1;
   animation-fill-mode: forwards;
   animation-delay: 2.5s;
@@ -83,7 +83,7 @@
 
 .four {
   opacity: 0;
-  transition: 1s;
+  transition: 1.5s;
   animation: show 2s 1;
   animation-fill-mode: forwards;
   animation-delay: 3.5s;

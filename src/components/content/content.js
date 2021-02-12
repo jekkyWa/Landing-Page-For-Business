@@ -17,10 +17,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import Example_1 from "../../image/example_1.png";
 import IconButton from "@material-ui/core/IconButton";
 
-const ContentOne = () => {
-  const [dataPrintingOne, setDataPrintingOne] = useState([]);
-  const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
-
+const Content = () => {
   const hide = () => {
     document.getElementsByClassName("cursor")[0].style.display = "block";
   };
@@ -29,12 +26,7 @@ const ContentOne = () => {
     document.getElementsByClassName("cursor")[0].style.display = "none";
   };
 
-  const [reloadAnimation, setReloadAnimation] = useState(false);
-  const [newLine, setNewLine] = useState(false);
-  const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [update, setUpdate] = useState(1);
-
-  const [terminalIntervalId, setTerminalIntervalId] = useState(0);
 
   const [dataSlide, setDataSlide] = useState([
     "I tried to write an Instagram clone and implement all the main functions of this platform",
@@ -51,7 +43,14 @@ const ContentOne = () => {
 
   const [numberSlide, setNumberSlide] = useState(0);
 
-  // Content One
+  // Content Funtion One
+
+  const [reloadAnimation, setReloadAnimation] = useState(false);
+  const [newLine, setNewLine] = useState(false);
+  const [animationOutBlock, setAnimationOutBlock] = useState(false);
+  const [dataPrintingOne, setDataPrintingOne] = useState([]);
+  const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
+  const [terminalIntervalId, setTerminalIntervalId] = useState(0);
 
   const printing = (arr, func) => {
     let i = 0;
@@ -62,6 +61,7 @@ const ContentOne = () => {
         func(arr.filter((_, index) => index <= i));
         i++;
       } else {
+        console.log('stop');
         clearInterval(_interval);
         setNewLine(true);
       }
@@ -76,27 +76,65 @@ const ContentOne = () => {
     clearInterval(terminalIntervalId);
     setDataPrintingOne([]);
     setDataPrintingTwo([]);
-    setTimeout(() => {
-      setUpdate(value);
-    }, 1000);
+    setUpdate(value);
   };
 
   const styleOutAnim = animationOutBlock ? "anim-out" : "";
 
-  //Content two
-
   useEffect(() => {
     if (!newLine) {
       setTimeout(() => {
+        console.log("1");
         printing(_arrOne, setDataPrintingOne);
-      }, 1000);
-    }
-    if (newLine) {
+      }, 4000);
+    }else{
       setTimeout(() => {
+        console.log("2");
         printing(_arrTwo, setDataPrintingTwo);
       }, 1000);
     }
-  }, [newLine, reloadAnimation]);
+  }, [newLine,reloadAnimation]);
+
+  //content one
+
+  if (update == 1) {
+    return (
+      <div className="content-block-one">
+        <h1>
+          <span className={`one ${styleOutAnim}`}>Why pay too much</span>
+          <span className={`two ${styleOutAnim}`}>for quality</span>
+          <span className={`three ${styleOutAnim}`}>when you can use</span>
+          <span className={`four ${styleOutAnim}`}>"Web-DEV"</span>
+        </h1>
+        <div className={`terminal ${styleOutAnim}`}>
+          <div className="container-fluid header-terminal">
+            <div className="row">
+              <div className="col-8 way">
+                <h1>
+                  <IndeterminateCheckBoxIcon className="icon-terminal" />
+                  Web-DEV:\Creating_your_Project
+                </h1>
+              </div>
+              <div className="col-4 ">
+                <div className="panel-icon">
+                  <MinimizeIcon />
+                  <AspectRatioIcon />
+                  <CancelPresentationIcon />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="body-terminal">
+            <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
+            <h1>{`${dataPrintingTwo.join("")}`}</h1>
+          </div>
+        </div>
+        <Footer contentOne={true} selectTwo={selectTwo} />
+      </div>
+    );
+  }
+
+  //content two
 
   if (update == 2) {
     return (
@@ -153,43 +191,6 @@ const ContentOne = () => {
         </div>
 
         <Footer contentTwo={true} selectTwo={selectTwo} update={update} />
-      </div>
-    );
-  }
-  //content one
-  if (update == 1) {
-    return (
-      <div className="content-block-one">
-        <h1>
-          <span className={`one ${styleOutAnim}`}>Why pay too much</span>
-          <span className={`two ${styleOutAnim}`}>for quality</span>
-          <span className={`three ${styleOutAnim}`}>when you can use</span>
-          <span className={`four ${styleOutAnim}`}>"Web-DEV"</span>
-        </h1>
-        <div className={`terminal ${styleOutAnim}`}>
-          <div className="container-fluid header-terminal">
-            <div className="row">
-              <div className="col-8 way">
-                <h1>
-                  <IndeterminateCheckBoxIcon className="icon-terminal" />
-                  Web-DEV:\Creating_your_Project
-                </h1>
-              </div>
-              <div className="col-4 ">
-                <div className="panel-icon">
-                  <MinimizeIcon />
-                  <AspectRatioIcon />
-                  <CancelPresentationIcon />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="body-terminal">
-            <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
-            <h1>{`${dataPrintingTwo.join("")}`}</h1>
-          </div>
-        </div>
-        <Footer contentOne={true} selectTwo={selectTwo} />
       </div>
     );
   }
@@ -294,4 +295,4 @@ const ContentOne = () => {
   }
 };
 
-export default ContentOne;
+export default Content;
