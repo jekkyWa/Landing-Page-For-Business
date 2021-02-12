@@ -29,9 +29,12 @@ const ContentOne = () => {
     document.getElementsByClassName("cursor")[0].style.display = "none";
   };
 
+  const [reloadAnimation, setReloadAnimation] = useState(false);
   const [newLine, setNewLine] = useState(false);
   const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [update, setUpdate] = useState(1);
+
+  const [terminalIntervalId, setTerminalIntervalId] = useState(0);
 
   const [dataSlide, setDataSlide] = useState([
     "I tried to write an Instagram clone and implement all the main functions of this platform",
@@ -54,19 +57,25 @@ const ContentOne = () => {
     let i = 0;
     let max = arr.length;
     let _interval = setInterval(function () {
+      setTerminalIntervalId(_interval);
       if (i < max) {
         func(arr.filter((_, index) => index <= i));
         i++;
       } else {
         clearInterval(_interval);
-        setTimeout(() => {
-          setNewLine(true);
-        }, 1000);
+        setNewLine(true);
       }
     }, 100);
   };
 
-  const selectTwo = (value) => {
+  const selectTwo = (value, count) => {
+    if (count) {
+      setNewLine(false);
+      setReloadAnimation(reloadAnimation ? false : true);
+    }
+    clearInterval(terminalIntervalId);
+    setDataPrintingOne([]);
+    setDataPrintingTwo([]);
     setTimeout(() => {
       setUpdate(value);
     }, 1000);
@@ -80,16 +89,15 @@ const ContentOne = () => {
     if (!newLine) {
       setTimeout(() => {
         printing(_arrOne, setDataPrintingOne);
-      }, 4000);
+      }, 1000);
     }
     if (newLine) {
       setTimeout(() => {
         printing(_arrTwo, setDataPrintingTwo);
       }, 1000);
     }
-  }, [newLine]);
+  }, [newLine, reloadAnimation]);
 
-  const newLineTerminal = newLine ? "Web-DEV:~" : "";
   if (update == 2) {
     return (
       <div className="content-block-one container-fluid">
@@ -144,7 +152,7 @@ const ContentOne = () => {
           </div>
         </div>
 
-        <Footer contentTwo={true} selectTwo={selectTwo} />
+        <Footer contentTwo={true} selectTwo={selectTwo} update={update} />
       </div>
     );
   }
@@ -178,7 +186,7 @@ const ContentOne = () => {
           </div>
           <div className="body-terminal">
             <h1>Web-DEV:~ {dataPrintingOne.join("")} </h1>
-            <h1>{`${newLineTerminal} ${dataPrintingTwo.join("")}`}</h1>
+            <h1>{`${dataPrintingTwo.join("")}`}</h1>
           </div>
         </div>
         <Footer contentOne={true} selectTwo={selectTwo} />

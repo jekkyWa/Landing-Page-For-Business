@@ -3,12 +3,18 @@ import "./footer.css";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }) => {
+const Footer = ({
+  contentOne,
+  selectTwo,
+  contentTwo,
+  contentThree,
+  contentFour,
+  update,
+}) => {
   const activeOne = contentOne ? "active" : "";
   const activeTwo = contentTwo ? "active" : "";
   const activeThree = contentThree ? "active" : "";
   const activeFour = contentFour ? "active" : "";
-  
 
   const hide = () => {
     document.getElementsByClassName("cursor")[0].style.display = "block";
@@ -16,6 +22,11 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }
 
   const uncovered = () => {
     document.getElementsByClassName("cursor")[0].style.display = "none";
+  };
+
+  const selectNewPage = (numberPage) => {
+    const statePage = update == 1 ? false : true;
+    selectTwo(numberPage, statePage);
   };
 
   return (
@@ -41,7 +52,7 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }
                 onMouseOver={() => uncovered()}
                 onMouseOut={() => hide()}
                 onClick={() => {
-                  selectTwo(1);
+                  selectNewPage(1);
                 }}
               />
             </li>
@@ -51,7 +62,7 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }
                 onMouseOut={() => hide()}
                 className={`${activeTwo} select-dot`}
                 onClick={() => {
-                  selectTwo(2);
+                  selectNewPage(2);
                 }}
               />
             </li>
@@ -61,7 +72,7 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }
                 onMouseOut={() => hide()}
                 className={`${activeThree} select-dot`}
                 onClick={() => {
-                  selectTwo(3);
+                  selectNewPage(3);
                 }}
               />
             </li>
@@ -71,7 +82,7 @@ const Footer = ({ contentOne, selectTwo, contentTwo, contentThree, contentFour }
                 onMouseOut={() => hide()}
                 className={`${activeFour} select-dot`}
                 onClick={() => {
-                  selectTwo(4);
+                  selectNewPage(4);
                 }}
               />
             </li>
