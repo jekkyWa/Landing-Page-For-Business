@@ -51,6 +51,7 @@ const Content = () => {
   const [dataPrintingOne, setDataPrintingOne] = useState([]);
   const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
   const [terminalIntervalId, setTerminalIntervalId] = useState(0);
+  const [terminalFirstTimeoutId, setTerminalFirstTimeoutId] = useState("");
 
   const printing = (arr, func) => {
     let i = 0;
@@ -61,7 +62,7 @@ const Content = () => {
         func(arr.filter((_, index) => index <= i));
         i++;
       } else {
-        console.log('stop');
+        console.log("stop");
         clearInterval(_interval);
         setNewLine(true);
       }
@@ -73,6 +74,7 @@ const Content = () => {
       setNewLine(false);
       setReloadAnimation(reloadAnimation ? false : true);
     }
+    clearTimeout(terminalFirstTimeoutId);
     clearInterval(terminalIntervalId);
     setDataPrintingOne([]);
     setDataPrintingTwo([]);
@@ -83,17 +85,20 @@ const Content = () => {
 
   useEffect(() => {
     if (!newLine) {
-      setTimeout(() => {
-        console.log("1");
-        printing(_arrOne, setDataPrintingOne);
-      }, 4000);
-    }else{
+      console.log(terminalFirstTimeoutId)
+      setTerminalFirstTimeoutId(
+        setTimeout(() => {
+          console.log("1");
+          printing(_arrOne, setDataPrintingOne);
+        }, 4000)
+      );
+    } else {
       setTimeout(() => {
         console.log("2");
         printing(_arrTwo, setDataPrintingTwo);
       }, 1000);
     }
-  }, [newLine,reloadAnimation]);
+  }, [newLine, reloadAnimation]);
 
   //content one
 

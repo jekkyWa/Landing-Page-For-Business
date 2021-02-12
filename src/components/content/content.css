@@ -99,7 +99,7 @@
   }
 }
 
-.anim-out {
+/* .anim-out {
   opacity: 1;
   transition: 1s;
   animation: hidden 1s 1;
@@ -114,7 +114,7 @@
   100% {
     opacity: 0;
   }
-}
+} */
 
 /* conent two */
 
