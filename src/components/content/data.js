@@ -54,3 +54,19 @@ export const _arrTwo = [
   "e",
   "d",
 ];
+
+export const _dataSlide = [
+  "I tried to write an Instagram clone and implement all the main functions of this platform",
+  "The typical pattern of an online pizza shop. All the functionality of orders, as well as authorization and registration is implemented",
+  "3",
+  "4",
+];
+
+export const _dataDescriptionSlide = [
+  "The project is implemented using the React framework and the back-end is implemented on node.js, mongo",
+  "2",
+  "3",
+  "4",
+];
+
+export const _nameProject = ["Instaclone", "Pizza", "ToDo", "Task Manager"];

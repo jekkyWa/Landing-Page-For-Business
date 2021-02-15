@@ -4,7 +4,7 @@ import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 import MinimizeIcon from "@material-ui/icons/Minimize";
-import { _arrOne, _arrTwo } from "./data";
+import { _arrOne, _arrTwo, _dataSlide, _dataDescriptionSlide,_nameProject } from "./data";
 import Footer from "../footer";
 import Img_1 from "../../image/img_1.png";
 import { Animated } from "react-animated-css";
@@ -28,18 +28,7 @@ const Content = () => {
 
   const [update, setUpdate] = useState(1);
 
-  const [dataSlide, setDataSlide] = useState([
-    "I tried to write an Instagram clone and implement all the main functions of this platform",
-    "2",
-    "3",
-    "4",
-  ]);
-  const [dataDescriptionSlide, setDataDescriptionSlide] = useState([
-    "The project is implemented using the React framework and the back-end is implemented on node.js, mongo",
-    "2",
-    "3",
-    "4",
-  ]);
+ 
 
   const [numberSlide, setNumberSlide] = useState(0);
 
@@ -47,7 +36,6 @@ const Content = () => {
 
   const [reloadAnimation, setReloadAnimation] = useState(false);
   const [newLine, setNewLine] = useState(false);
-  const [animationOutBlock, setAnimationOutBlock] = useState(false);
   const [dataPrintingOne, setDataPrintingOne] = useState([]);
   const [dataPrintingTwo, setDataPrintingTwo] = useState([]);
   const [terminalIntervalId, setTerminalIntervalId] = useState(0);
@@ -62,11 +50,10 @@ const Content = () => {
         func(arr.filter((_, index) => index <= i));
         i++;
       } else {
-        console.log("stop");
         clearInterval(_interval);
         setNewLine(true);
       }
-    }, 100);
+    }, 70);
   };
 
   const selectTwo = (value, count) => {
@@ -74,29 +61,24 @@ const Content = () => {
       setNewLine(false);
       setReloadAnimation(reloadAnimation ? false : true);
     }
+    setUpdate(value);
     clearTimeout(terminalFirstTimeoutId);
     clearInterval(terminalIntervalId);
     setDataPrintingOne([]);
     setDataPrintingTwo([]);
-    setUpdate(value);
   };
-
-  const styleOutAnim = animationOutBlock ? "anim-out" : "";
 
   useEffect(() => {
     if (!newLine) {
-      console.log(terminalFirstTimeoutId)
       setTerminalFirstTimeoutId(
         setTimeout(() => {
-          console.log("1");
           printing(_arrOne, setDataPrintingOne);
-        }, 4000)
+        }, 2000)
       );
     } else {
       setTimeout(() => {
-        console.log("2");
         printing(_arrTwo, setDataPrintingTwo);
-      }, 1000);
+      }, 500);
     }
   }, [newLine, reloadAnimation]);
 
@@ -106,12 +88,12 @@ const Content = () => {
     return (
       <div className="content-block-one">
         <h1>
-          <span className={`one ${styleOutAnim}`}>Why pay too much</span>
-          <span className={`two ${styleOutAnim}`}>for quality</span>
-          <span className={`three ${styleOutAnim}`}>when you can use</span>
-          <span className={`four ${styleOutAnim}`}>"Web-DEV"</span>
+          <span className="one">Why pay too much</span>
+          <span className="two">for quality</span>
+          <span className="three">when you can use</span>
+          <span className="four">"Web-DEV"</span>
         </h1>
-        <div className={`terminal ${styleOutAnim}`}>
+        <div className="terminal">
           <div className="container-fluid header-terminal">
             <div className="row">
               <div className="col-8 way">
@@ -191,7 +173,14 @@ const Content = () => {
             </p>
           </div>
           <div className="col-6 contnet-two-body-img">
-            <img src={Img_1} />
+            <Animated
+              animationIn="fadeInLeft"
+              animationInDuration={400}
+              animationOutDuration={1000}
+              isVisible={true}
+            >
+              <img className="img-mac" src={Img_1} />
+            </Animated>
           </div>
         </div>
 
@@ -207,10 +196,22 @@ const Content = () => {
       <div className="content-block-one container-fluid">
         <div className="row">
           <div className="col-6">
-            <div className="sample-project">
+            <Animated
+              animationIn="fadeInRight"
+              animationInDuration={400}
+              animationOutDuration={1000}
+              isVisible={true}
+              className="sample-project"
+            >
               <h1>Sample projects</h1>
-            </div>
-            <div className="row slider">
+            </Animated>
+            <Animated
+              animationIn="fadeInRight"
+              animationInDuration={400}
+              animationOutDuration={1000}
+              isVisible={true}
+              className="row slider"
+            >
               <div className="col-3">
                 <IconButton>
                   <NavigateBeforeIcon
@@ -225,7 +226,7 @@ const Content = () => {
                 </IconButton>
               </div>
               <div className="col-6 project-name">
-                <h1>Instaclone</h1>
+                  <h1>{_nameProject[numberSlide]}</h1>
               </div>
               <div className="col-3">
                 <IconButton>
@@ -240,21 +241,33 @@ const Content = () => {
                   />
                 </IconButton>
               </div>
-            </div>
-            <div className="description">
-              <p>{dataSlide[numberSlide]}</p>
-            </div>
-            <div className="slider-icons">
+            </Animated>
+            <Animated
+              animationIn="fadeInRight"
+              animationInDuration={400}
+              animationOutDuration={1000}
+              isVisible={true}
+              className="description"
+            >
+              <p>{_dataSlide[numberSlide]}</p>
+            </Animated>
+            <Animated
+              animationIn="fadeInRight"
+              animationInDuration={400}
+              animationOutDuration={1000}
+              isVisible={true}
+              className="slider-icons"
+            >
               <InstagramIcon fontSize="large" className="slider-icon" />
               <LocalPizzaIcon fontSize="large" className="slider-icon" />
               <ListAltIcon fontSize="large" className="slider-icon" />
               <AssignmentIcon fontSize="large" className="slider-icon" />
-            </div>
+            </Animated>
           </div>
           <div className="col-6 img-project">
             <img src={Example_1} />
             <div className="description-img">
-              <h2>{dataDescriptionSlide[numberSlide]}</h2>
+              <h2>{_dataDescriptionSlide[numberSlide]}</h2>
             </div>
           </div>
         </div>

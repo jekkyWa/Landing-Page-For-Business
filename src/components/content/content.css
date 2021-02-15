@@ -58,17 +58,17 @@
 .one {
   opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
   transition: 1s; /*Скорость перехода состояния элемента*/
-  animation: show 1.5s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
   animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
-  animation-delay: 0.5s; /* Задержка перед началом */
+  animation-delay: 0.4s; /* Задержка перед началом */
 }
 
 .two {
   opacity: 0;
   transition: 1s;
-  animation: show 1.5s 1;
+  animation: show 2s 1;
   animation-fill-mode: forwards;
-  animation-delay: 1.5s;
+  animation-delay: 0.8s;
   margin-left: 15px;
 }
 
@@ -77,7 +77,7 @@
   transition: 1.5s;
   animation: show 2s 1;
   animation-fill-mode: forwards;
-  animation-delay: 2.5s;
+  animation-delay: 1.2s;
   margin-left: 15px;
 }
 
@@ -86,7 +86,7 @@
   transition: 1.5s;
   animation: show 2s 1;
   animation-fill-mode: forwards;
-  animation-delay: 3.5s;
+  animation-delay: 1.6s;
   margin-left: 15px;
 }
 
@@ -99,7 +99,7 @@
   }
 }
 
-/* .anim-out {
+.anim-out {
   opacity: 1;
   transition: 1s;
   animation: hidden 1s 1;
@@ -114,7 +114,7 @@
   100% {
     opacity: 0;
   }
-} */
+}
 
 /* conent two */
 
@@ -143,7 +143,7 @@
   width: 70%;
 }
 
-.contnet-two-body-img > img {
+.img-mac {
   width: 90%;
   margin-left: 15px;
   -webkit-filter: drop-shadow(-5px -3px 10px #000);
@@ -231,21 +231,23 @@
 
 .send-request {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
-.send-request>h1{
-  font-family:Quicksand-Light;
+.send-request > h1 {
+  font-family: Quicksand-Light;
   color: white;
+  width: 50%;
+  margin-left: 25%;
 }
 
 .title-send {
   padding: 10px;
-  width: 40%;
-  background-color: rgba(0, 0, 0, 0.452);
-  border: 1px solid rgba(0, 0, 0, 0.507);
+  width: 45%;
+  background-color: rgba(218, 218, 218, 0.705);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   font-family: Quicksand-Light;
-  color: white;
+  color: black;
   font-size: 1.2em;
   margin-top: 20px;
 }
@@ -253,22 +255,22 @@
 .title-body {
   padding: 10px;
   margin-top: 20px;
-  width: 40%;
-  background-color: rgba(0, 0, 0, 0.452);
-  border: 1px solid rgba(0, 0, 0, 0.507);
+  width: 45%;
+  background-color: rgba(218, 218, 218, 0.705);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   font-family: Quicksand-Light;
-  color: white;
+  color: black;
   font-size: 1.2em;
-  resize:none;
+  resize: none;
   height: 200px;
 }
 
 .button-send {
-  width: 40%;
+  width: 45%;
   padding: 10px;
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.815);
-  color:black;
+  background-color: rgba(29, 29, 29, 0.815);
+  color: white;
   font-family: Quicksand-Light;
   font-size: 1.2em;
   border: 1px solid rgba(124, 124, 124, 0.877);
