@@ -5,6 +5,7 @@ html {
 body {
   cursor: url("./cursor/curs.cur"), auto;
   background: linear-gradient(130deg, black, white);
+  overflow: hidden;
 }
 
 @font-face {

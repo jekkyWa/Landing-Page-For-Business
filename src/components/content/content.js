@@ -4,7 +4,13 @@ import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 import MinimizeIcon from "@material-ui/icons/Minimize";
-import { _arrOne, _arrTwo, _dataSlide, _dataDescriptionSlide,_nameProject } from "./data";
+import {
+  _arrOne,
+  _arrTwo,
+  _dataSlide,
+  _dataDescriptionSlide,
+  _nameProject,
+} from "./data";
 import Footer from "../footer";
 import Img_1 from "../../image/img_1.png";
 import { Animated } from "react-animated-css";
@@ -12,12 +18,17 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LocalPizzaIcon from "@material-ui/icons/LocalPizza";
-import ListAltIcon from "@material-ui/icons/ListAlt";
+import ChatIcon from "@material-ui/icons/Chat";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import Example_1 from "../../image/example_1.png";
+import Example_2 from "../../image/example_2.png";
+import Example_3 from "../../image/example_3.png";
+import Example_4 from "../../image/example_4.png";
 import IconButton from "@material-ui/core/IconButton";
 
 const Content = () => {
+  const images = [Example_1, Example_2, Example_3, Example_4];
+
   const hide = () => {
     document.getElementsByClassName("cursor")[0].style.display = "block";
   };
@@ -28,9 +39,9 @@ const Content = () => {
 
   const [update, setUpdate] = useState(1);
 
- 
-
   const [numberSlide, setNumberSlide] = useState(0);
+
+  const [direction, setDirection] = useState("next");
 
   // Content Funtion One
 
@@ -81,6 +92,7 @@ const Content = () => {
       }, 500);
     }
   }, [newLine, reloadAnimation]);
+
 
   //content one
 
@@ -218,6 +230,7 @@ const Content = () => {
                     className="arrow-before"
                     fontSize="large"
                     onClick={() => {
+                      setDirection("before");
                       numberSlide == 0
                         ? setNumberSlide(3)
                         : setNumberSlide(numberSlide - 1);
@@ -226,7 +239,7 @@ const Content = () => {
                 </IconButton>
               </div>
               <div className="col-6 project-name">
-                  <h1>{_nameProject[numberSlide]}</h1>
+                <h1>{_nameProject[numberSlide]}</h1>
               </div>
               <div className="col-3">
                 <IconButton>
@@ -234,6 +247,7 @@ const Content = () => {
                     className="arrow-next"
                     fontSize="large"
                     onClick={() => {
+                      setDirection("next");
                       numberSlide == 3
                         ? setNumberSlide(0)
                         : setNumberSlide(numberSlide + 1);
@@ -249,7 +263,15 @@ const Content = () => {
               isVisible={true}
               className="description"
             >
-              <p>{_dataSlide[numberSlide]}</p>
+              <p
+                className={`${
+                  numberSlide == 0 || numberSlide == 2
+                    ? "oneAnimSlideHidden"
+                    : "twoAnimSlideHidden"
+                }`}
+              >
+                {_dataSlide[numberSlide]}
+              </p>
             </Animated>
             <Animated
               animationIn="fadeInRight"
@@ -258,18 +280,126 @@ const Content = () => {
               isVisible={true}
               className="slider-icons"
             >
-              <InstagramIcon fontSize="large" className="slider-icon" />
-              <LocalPizzaIcon fontSize="large" className="slider-icon" />
-              <ListAltIcon fontSize="large" className="slider-icon" />
-              <AssignmentIcon fontSize="large" className="slider-icon" />
+              <InstagramIcon
+                fontSize="large"
+                className={`slider-icon ${
+                  numberSlide == 0 ? "active-icon" : ""
+                }`}
+              />
+              <LocalPizzaIcon
+                fontSize="large"
+                className={`slider-icon ${
+                  numberSlide == 1 ? "active-icon" : ""
+                }`}
+              />
+              <ChatIcon
+                fontSize="large"
+                className={`slider-icon ${
+                  numberSlide == 2 ? "active-icon" : ""
+                }`}
+              />
+              <AssignmentIcon
+                fontSize="large"
+                className={`slider-icon ${
+                  numberSlide == 3 ? "active-icon" : ""
+                }`}
+              />
             </Animated>
           </div>
-          <div className="col-6 img-project">
-            <img src={Example_1} />
+          <Animated
+            animationIn="fadeInLeft"
+            animationInDuration={400}
+            animationOutDuration={1000}
+            isVisible={true}
+            className="col-6 img-project"
+          >
+            <img
+              className={`${
+                numberSlide == 0 && direction == "next"
+                  ? "active-description-right"
+                  : numberSlide == 0 && direction == "before"
+                  ? "active-description-left"
+                  : ""
+              }`}
+              src={images[0]}
+            />
+            <img
+              className={`${
+                numberSlide == 1 && direction == "next"
+                  ? "active-description-right"
+                  : numberSlide == 1 && direction == "before"
+                  ? "active-description-left"
+                  : ""
+              }`}
+              src={images[1]}
+            />
+            <img
+              className={`${
+                numberSlide == 2 && direction == "next"
+                  ? "active-description-right"
+                  : numberSlide == 2 && direction == "before"
+                  ? "active-description-left"
+                  : ""
+              }`}
+              src={images[2]}
+            />
+            <img
+              className={`${
+                numberSlide == 3 && direction == "next"
+                  ? "active-description-right"
+                  : numberSlide == 3 && direction == "before"
+                  ? "active-description-left"
+                  : ""
+              }`}
+              src={images[3]}
+            />
             <div className="description-img">
-              <h2>{_dataDescriptionSlide[numberSlide]}</h2>
+              <h2
+                className={`hidden-description ${
+                  numberSlide == 0 && direction == "next"
+                    ? "active-description-right"
+                    : numberSlide == 0 && direction == "before"
+                    ? "active-description-left"
+                    : ""
+                }`}
+              >
+                {_dataDescriptionSlide[0]}
+              </h2>
+              <h2
+                className={`hidden-description ${
+                  numberSlide == 1 && direction == "next"
+                    ? "active-description-right"
+                    : numberSlide == 1 && direction == "before"
+                    ? "active-description-left"
+                    : ""
+                }`}
+              >
+                {_dataDescriptionSlide[1]}
+              </h2>
+              <h2
+                className={`hidden-description ${
+                  numberSlide == 2 && direction == "next"
+                    ? "active-description-right"
+                    : numberSlide == 2 && direction == "before"
+                    ? "active-description-left"
+                    : ""
+                }`}
+              >
+                {_dataDescriptionSlide[2]}
+              </h2>
+              <h2
+                className={`hidden-description ${
+                  numberSlide == 3 && direction == "next"
+                    ? "active-description-right"
+                    : numberSlide == 3 && direction == "before"
+                    ? "active-description-left"
+                    : ""
+                }`}
+              >
+                {_dataDescriptionSlide[3]}
+              </h2>
             </div>
-          </div>
+          </Animated>
         </div>
         <Footer contentThree={true} selectTwo={selectTwo} />
       </div>

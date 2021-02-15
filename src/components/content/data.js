@@ -58,15 +58,15 @@ export const _arrTwo = [
 export const _dataSlide = [
   "I tried to write an Instagram clone and implement all the main functions of this platform",
   "The typical pattern of an online pizza shop. All the functionality of orders, as well as authorization and registration is implemented",
-  "3",
-  "4",
+  "Chat with special encryption and even more interesting functionality ",
+  "It is not ready yet, but it will appear soon",
 ];
 
 export const _dataDescriptionSlide = [
+  "Written in React, the backend functionality is also made in react",
   "The project is implemented using the React framework and the back-end is implemented on node.js, mongo",
-  "2",
-  "3",
-  "4",
+  "The project also is implemented using the React framework and the back-end is implemented on node.js, mongo ",
+  "It is not ready yet, but it will appear soon.",
 ];
 
-export const _nameProject = ["Instaclone", "Pizza", "ToDo", "Task Manager"];
+export const _nameProject = ["Instaclone", "Pizza", "Chat", "Task Manager"];
