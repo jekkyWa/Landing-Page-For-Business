@@ -194,7 +194,7 @@
   color: white;
   font-family: Quicksand-Light;
   font-size: 1.5em;
-  height: 100px;
+  height: 80px;
 }
 
 .slider-icons {
@@ -224,7 +224,7 @@
 }
 
 .description-img {
-  margin-top: 15px;
+  margin-top: 30px !important;
 }
 
 .description-img > h2 {
@@ -290,7 +290,6 @@
   }
 }
 
-
 .hidden-description {
   position: absolute;
   opacity: 0;
@@ -298,10 +297,10 @@
   margin-bottom: 15%;
 }
 
-.img-project>img{
+.img-project > img {
   opacity: 0;
   position: absolute;
-  left:0;
+  left: 0;
   margin-left: 15%;
 }
 
@@ -338,5 +337,36 @@
   100% {
     opacity: 1;
     transform: translateX(0%);
+  }
+}
+
+
+.progress {
+  height: 3px;
+  width: 80%;
+  background-color: rgba(90, 90, 90, 0.5);
+  position: relative;
+  margin: auto;
+}
+.progress div {
+  animation-name: anim;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  height: 100%;
+  margin: 0;
+  width: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes anim {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
   }
 }

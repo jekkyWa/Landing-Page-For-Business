@@ -25,6 +25,7 @@ import Example_2 from "../../image/example_2.png";
 import Example_3 from "../../image/example_3.png";
 import Example_4 from "../../image/example_4.png";
 import IconButton from "@material-ui/core/IconButton";
+import shortid from "shortid";
 
 const Content = () => {
   const images = [Example_1, Example_2, Example_3, Example_4];
@@ -40,8 +41,9 @@ const Content = () => {
   const [update, setUpdate] = useState(1);
 
   const [numberSlide, setNumberSlide] = useState(0);
-
   const [direction, setDirection] = useState("next");
+  const [timeoutSlider, setTimeoutSlider] = useState(0);
+  const [randomId, setRandomId] = useState("");
 
   // Content Funtion One
 
@@ -65,6 +67,30 @@ const Content = () => {
         setNewLine(true);
       }
     }, 70);
+  };
+
+  const sliderTimeFunc = () => {
+    if (update == 3) {
+      let i = 1;
+      setTimeoutSlider(
+        setInterval(function () {
+          if (i < 4) {
+            setNumberSlide(i);
+            i++;
+          } else {
+            setNumberSlide(0);
+            i = 1;
+          }
+        }, 8000)
+      );
+    } else {
+      setNumberSlide(0);
+      clearInterval(timeoutSlider);
+    }
+  };
+
+  const getId = () => {
+    setRandomId(shortid.generate());
   };
 
   const selectTwo = (value, count) => {
@@ -93,6 +119,9 @@ const Content = () => {
     }
   }, [newLine, reloadAnimation]);
 
+  useEffect(() => {
+    sliderTimeFunc();
+  }, [update]);
 
   //content one
 
@@ -144,7 +173,7 @@ const Content = () => {
               {" "}
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={300}
+                animationInDuration={500}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -154,7 +183,7 @@ const Content = () => {
             <p>
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={400}
+                animationInDuration={600}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -165,7 +194,7 @@ const Content = () => {
             <h1>
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={300}
+                animationInDuration={500}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -176,7 +205,7 @@ const Content = () => {
               {" "}
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={400}
+                animationInDuration={600}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -187,7 +216,7 @@ const Content = () => {
           <div className="col-6 contnet-two-body-img">
             <Animated
               animationIn="fadeInLeft"
-              animationInDuration={400}
+              animationInDuration={700}
               animationOutDuration={1000}
               isVisible={true}
             >
@@ -225,16 +254,20 @@ const Content = () => {
               className="row slider"
             >
               <div className="col-3">
-                <IconButton>
+                <IconButton
+                  onClick={() => {
+                    setDirection("before");
+                    numberSlide == 0
+                      ? setNumberSlide(3)
+                      : setNumberSlide(numberSlide - 1);
+                    clearInterval(timeoutSlider);
+                    sliderTimeFunc();
+                    getId();
+                  }}
+                >
                   <NavigateBeforeIcon
                     className="arrow-before"
                     fontSize="large"
-                    onClick={() => {
-                      setDirection("before");
-                      numberSlide == 0
-                        ? setNumberSlide(3)
-                        : setNumberSlide(numberSlide - 1);
-                    }}
                   />
                 </IconButton>
               </div>
@@ -242,17 +275,18 @@ const Content = () => {
                 <h1>{_nameProject[numberSlide]}</h1>
               </div>
               <div className="col-3">
-                <IconButton>
-                  <NavigateNextIcon
-                    className="arrow-next"
-                    fontSize="large"
-                    onClick={() => {
-                      setDirection("next");
-                      numberSlide == 3
-                        ? setNumberSlide(0)
-                        : setNumberSlide(numberSlide + 1);
-                    }}
-                  />
+                <IconButton
+                  onClick={() => {
+                    setDirection("next");
+                    numberSlide == 3
+                      ? setNumberSlide(0)
+                      : setNumberSlide(numberSlide + 1);
+                    clearInterval(timeoutSlider);
+                    sliderTimeFunc();
+                    getId();
+                  }}
+                >
+                  <NavigateNextIcon className="arrow-next" fontSize="large" />
                 </IconButton>
               </div>
             </Animated>
@@ -305,6 +339,9 @@ const Content = () => {
                 }`}
               />
             </Animated>
+            <div key={randomId} className="progress">
+              <div></div>
+            </div>
           </div>
           <Animated
             animationIn="fadeInLeft"

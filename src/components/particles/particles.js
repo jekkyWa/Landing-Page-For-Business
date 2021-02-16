@@ -15,10 +15,10 @@ export default () => (
       params={{
         particles: {
           number: {
-            value: 70,
+            value: 50,
             density: {
               enable: true,
-              value_area: 600,
+              value_area: 500,
             },
           },
           color: {
