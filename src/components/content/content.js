@@ -69,9 +69,9 @@ const Content = () => {
     }, 70);
   };
 
-  const sliderTimeFunc = () => {
+  const sliderTimeFunc = (value = numberSlide + 1) => {
     if (update == 3) {
-      let i = 1;
+      let i = value;
       setTimeoutSlider(
         setInterval(function () {
           if (i < 4) {
@@ -257,11 +257,12 @@ const Content = () => {
                 <IconButton
                   onClick={() => {
                     setDirection("before");
+                    let count = numberSlide - 1;
                     numberSlide == 0
                       ? setNumberSlide(3)
-                      : setNumberSlide(numberSlide - 1);
+                      : setNumberSlide(count);
                     clearInterval(timeoutSlider);
-                    sliderTimeFunc();
+                    sliderTimeFunc(numberSlide == 0 ? 0 : numberSlide);
                     getId();
                   }}
                 >
@@ -278,11 +279,12 @@ const Content = () => {
                 <IconButton
                   onClick={() => {
                     setDirection("next");
+                    let count = numberSlide + 1;
                     numberSlide == 3
                       ? setNumberSlide(0)
-                      : setNumberSlide(numberSlide + 1);
+                      : setNumberSlide(count);
                     clearInterval(timeoutSlider);
-                    sliderTimeFunc();
+                    sliderTimeFunc(numberSlide == 3 ? 1 : numberSlide + 2);
                     getId();
                   }}
                 >
