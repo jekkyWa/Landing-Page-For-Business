@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Content from "../content";
+import MobileContent from "../content/mobile-content";
 import Header from "../header";
 import ParticleComponent from "../particles/particles";
 import "./app.css";
 
 const App = () => {
   const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
+  const [a,setA] =useState()
   useEffect(() => {
     const moveCursor = (e) => {
       const x = e.clientX;
@@ -18,9 +20,12 @@ const App = () => {
     };
   }, []);
 
+  const desktop = window.screen.width > 770 ? <Content/> : <MobileContent/>
+
+
   return (
     <div>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           top: 0,
@@ -44,12 +49,12 @@ const App = () => {
             style={{
               transform: `translate3d(${cursorXY.x}px, ${cursorXY.y}px, 0)`,
             }}
-          />
+          /> */}
           <Header />
-          <Content/>   
+          {desktop}   
         </div>
-      </div>
-    </div>
+    //   </div>
+    // </div>
   );
 };
 

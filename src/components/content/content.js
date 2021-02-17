@@ -477,33 +477,38 @@ const Content = () => {
 
   if (update == 4) {
     return (
-      <div className="container-fluid">
-        <div className="send-request">
+      <div className="container-fluid send-form">
+        <Animated
+          animationIn="fadeIn"
+          animationInDuration={1000}
+          isVisible={true}
+          className="send-request"
+        >
           <h1>Enter your details in the field below</h1>
-          <div>
-            <input
-              className="title-send"
-              placeholder="Enter project subject"
-              onMouseOver={() => uncovered()}
-              onMouseOut={() => hide()}
-            />
-          </div>
-          <div>
-            <textarea
-              className="title-body"
-              placeholder="Enter project description"
-              onMouseOver={() => uncovered()}
-              onMouseOut={() => hide()}
-            />
-          </div>
-          <button
-            className="button-send"
+          <input
+            className="title-send"
+            placeholder="Enter project subject"
             onMouseOver={() => uncovered()}
             onMouseOut={() => hide()}
-          >
-            Send project data
-          </button>
-        </div>
+          />
+
+          <textarea
+            className="title-body"
+            placeholder="Enter project description"
+            onMouseOver={() => uncovered()}
+            onMouseOut={() => hide()}
+          />
+
+          <div>
+            <button
+              className="button-send"
+              onMouseOver={() => uncovered()}
+              onMouseOut={() => hide()}
+            >
+              Send project data
+            </button>
+          </div>
+        </Animated>
         <Footer contentFour={true} selectTwo={selectTwo} />
       </div>
     );

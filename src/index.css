@@ -13,8 +13,18 @@ body {
   src: url(../src/fonts/Quicksand-Light.otf); /* Путь к файлу со шрифтом */
 }
 
-@font-face{
-    font-family: Quicksand-Bold;
-    src: url(../src/fonts//Quicksand-LightItalic.otf)
+@font-face {
+  font-family: Quicksand-Bold;
+  src: url(../src/fonts//Quicksand-LightItalic.otf);
 }
 
+@media screen and (max-width: 770px) {
+  body,
+  html {
+    background: linear-gradient(110deg, black, white)
+      no-repeat center !important;
+    overflow: auto !important;
+    background-size: cover !important;
+    height: calc(100% + 60px);
+  }
+}

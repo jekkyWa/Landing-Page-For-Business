@@ -7,18 +7,18 @@ export default () => (
       position: "absolute",
       top: 0,
       left: 0,
-      width: "100%",
-      height: "100%",
+      width: "100vw",
+      height: "100vh",
     }}
   >
     <Particles
       params={{
         particles: {
           number: {
-            value: 50,
+            value: 60,
             density: {
               enable: true,
-              value_area: 500,
+              value_area: 600,
             },
           },
           color: {

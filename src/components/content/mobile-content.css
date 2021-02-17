@@ -1,0 +1,168 @@
+.content-block-one-mobile > h1 {
+  font-family: Quicksand-Light;
+  color: white;
+  letter-spacing: 3px;
+  font-weight: 100;
+  margin: 45px;
+  height: 50px;
+  text-align: center;
+  font-size: 5vw;
+}
+
+.terminal-mobile {
+  background-color: rgba(0, 0, 0, 0.726);
+  height: 125px;
+  margin: 0 10% 0 10%;
+}
+
+.way-mobile > h1 {
+  font-family: Consolas, monaco, monospace !important;
+  font-size: 2vw;
+  color: white;
+  padding-bottom: -2px;
+}
+
+.body-terminal-mobile > h1 {
+  font-family: Consolas, monaco, monospace !important;
+  font-size: 2vw;
+  margin-left: 4px;
+  color: white;
+}
+
+.btn-terminal-mobile {
+  height: 10px !important;
+  margin-right: -1px !important;
+  margin-left: -10px;
+}
+
+.icon-terminal-mobile {
+  margin-right: 5px;
+  height: 10px !important;
+  margin-top: 5px;
+}
+
+.content-two-body-mobile > h1 {
+  color: white;
+  font-family: Quicksand-Light;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 6vw;
+}
+
+.content-two-body-mobile > p {
+  color: white;
+  font-family: Quicksand-Light;
+  font-size: 4vw;
+  text-align: center;
+  margin: 20px 2% 0 2%;
+}
+
+.img-mac-mobile {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  -webkit-filter: drop-shadow(-5px -3px 10px #000);
+  filter: drop-shadow(-5px -3px 10px #000);
+}
+
+.sample-project-mobile {
+  margin-top: 40px;
+}
+
+.sample-project-mobile > h1 {
+  color: white;
+  font-family: Quicksand-Light;
+  font-weight: 500;
+  text-align: center;
+  font-size: 6vw;
+}
+
+.project-name-mobile > h1 {
+  color: white;
+  font-family: Quicksand-Light;
+  text-align: center;
+  font-size: 5vw;
+  margin-top: 20px;
+}
+
+.project-name-mobile > p {
+  color: white;
+  font-family: Quicksand-Light;
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.project-name-mobile > h2 {
+  color: white;
+  font-family: Quicksand-Bold;
+  text-align: center;
+  font-size: 3.5vw;
+  margin-top: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.project-name-mobile > img {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-filter: drop-shadow(-5px -3px 10px #000);
+  filter: drop-shadow(-5px -3px 10px #000);
+}
+
+.send-form-mobile {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.send-form-mobile > h1 {
+  color: white;
+  font-family: Quicksand-Light;
+  font-size: 6vw;
+  text-align: center;
+}
+
+.send-form-mobile > h2 {
+  color: white;
+  font-family: Quicksand-Light;
+  font-size: 5vw;
+  text-align: center;
+}
+
+.title-send-mobile {
+  margin: 20px;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 1px;
+  padding: 8px;
+  font-family: Quicksand-Light;
+  color: rgb(255, 255, 255);
+  background-color: rgba(78, 74, 74, 0.774);
+}
+
+.title-body-mobile {
+  margin: 10px;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 1px;
+  padding: 8px;
+  font-family: Quicksand-Light;
+  color: rgb(255, 255, 255);
+  background-color: rgba(78, 74, 74, 0.774);
+  resize: none;
+  height: 120px;
+}
+
+.button-send-mobile {
+  margin: 10px;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 1px;
+  padding: 5px;
+  font-family: Quicksand-Light;
+  background-color: rgba(214, 214, 214, 0.685);
+}
