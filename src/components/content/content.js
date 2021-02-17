@@ -81,7 +81,7 @@ const Content = () => {
             setNumberSlide(0);
             i = 1;
           }
-        }, 8000)
+        }, 5000)
       );
     } else {
       setNumberSlide(0);
@@ -321,24 +321,52 @@ const Content = () => {
                 className={`slider-icon ${
                   numberSlide == 0 ? "active-icon" : ""
                 }`}
+                onClick={() => {
+                  setDirection("next");
+                  setNumberSlide(0);
+                  clearInterval(timeoutSlider);
+                  sliderTimeFunc(1);
+                  getId();
+                }}
               />
               <LocalPizzaIcon
                 fontSize="large"
                 className={`slider-icon ${
                   numberSlide == 1 ? "active-icon" : ""
                 }`}
+                onClick={() => {
+                  setDirection("next");
+                  setNumberSlide(1);
+                  clearInterval(timeoutSlider);
+                  sliderTimeFunc(2);
+                  getId();
+                }}
               />
               <ChatIcon
                 fontSize="large"
                 className={`slider-icon ${
                   numberSlide == 2 ? "active-icon" : ""
                 }`}
+                onClick={() => {
+                  setDirection("next");
+                  setNumberSlide(2);
+                  clearInterval(timeoutSlider);
+                  sliderTimeFunc(3);
+                  getId();
+                }}
               />
               <AssignmentIcon
                 fontSize="large"
                 className={`slider-icon ${
                   numberSlide == 3 ? "active-icon" : ""
                 }`}
+                onClick={() => {
+                  setDirection("next");
+                  setNumberSlide(3);
+                  clearInterval(timeoutSlider);
+                  sliderTimeFunc(0);
+                  getId();
+                }}
               />
             </Animated>
             <div key={randomId} className="progress">

@@ -350,7 +350,7 @@
 }
 .progress div {
   animation-name: anim;
-  animation-duration: 8s;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   height: 100%;
