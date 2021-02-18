@@ -20,6 +20,7 @@
 .dot > li {
   display: inline;
   margin-right: 20%;
+  margin-left: -4%;
   color: rgb(68, 68, 68);
 }
 

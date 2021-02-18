@@ -18,7 +18,7 @@ body {
   src: url(../src/fonts//Quicksand-LightItalic.otf);
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 840px) {
   html {
     background: linear-gradient(110deg, black, white) no-repeat fixed !important;
     background-size: cover !important;
@@ -36,10 +36,12 @@ body {
   }
 }
 
-@media only screen and (max-device-width: 770px) {
+@media only screen and (max-device-width: 840px) {
   html {
     height: calc(100% + 60px);
     min-height: calc(100% + 60px);
     background:black !important ;
+    overflow-y: visible;
+    overflow-x: hidden !important;
   }
 }

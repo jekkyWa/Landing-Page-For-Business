@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div className="col-4 contact-block">
           <div className="button-right-block-header">
-            <InstagramIcon className="inst-icon" />
+            <InstagramIcon className="inst-icon" href="https://www.instagram.com/" />
           </div>
           <div className="button-right-block-header">
             <FacebookIcon />

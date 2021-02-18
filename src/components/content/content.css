@@ -8,11 +8,12 @@
   margin: 45px;
   height: 95px;
   text-align: center;
+  font-size: calc(20px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));
 }
 
 .terminal {
   background-color: rgba(0, 0, 0, 0.726);
-  height: 300px;
+  min-height: 40vh;
   margin: 0 30% 0 30%;
 }
 
@@ -128,6 +129,7 @@
   text-align: center;
   margin-left: 50px;
   margin-top: 70px;
+  font-size: calc(20px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));;
 }
 
 .contnet-two-body > p {
@@ -159,6 +161,7 @@
 
 .sample-project {
   margin-top: 40px;
+  
 }
 
 .sample-project > h1 {
@@ -166,6 +169,7 @@
   font-family: Quicksand-Light;
   font-weight: 500;
   text-align: center;
+  font-size: calc(18px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));
 }
 
 .arrow-before {
@@ -182,7 +186,7 @@
 }
 
 .project-name > h1 {
-  font-size: 2em;
+  font-size: calc(20px + (24 - 14) * ((100vw - 480px) / (1024 - 480)));
 }
 
 .description {
@@ -193,8 +197,8 @@
 .description > p {
   color: white;
   font-family: Quicksand-Light;
-  font-size: 1.5em;
-  height: 80px;
+  font-size: calc(18px + (20 - 14) * ((100vw - 480px) / (1024 - 480)));
+  height: 90px;
 }
 
 .slider-icons {
@@ -204,7 +208,7 @@
 }
 
 .slider-icon {
-  margin: 45px;
+  margin: 6%;
 }
 
 .active-icon {
@@ -230,13 +234,15 @@
 .description-img > h2 {
   color: rgb(0, 0, 0);
   font-family: Quicksand-Bold;
+  
 }
 
 .hidden-description {
   position: absolute;
   opacity: 0;
-  bottom: 0;
-  margin-bottom: 15%;
+  font-size: calc(18px + (22 - 14) * ((100vw - 480px) / (1024 - 480)));
+  left: 0;
+  bottom: 18%;
 }
 
 .img-project > img {
@@ -282,7 +288,6 @@
   }
 }
 
-
 .progress {
   height: 3px;
   width: 80%;
@@ -292,7 +297,7 @@
 }
 .progress div {
   animation-name: anim;
-  animation-duration: 5s;
+  animation-duration: 8s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   height: 100%;
@@ -315,7 +320,7 @@
 
 /*content four*/
 
-.send-form{
+.send-form {
   background-color: rgba(0, 0, 0, 0.404);
   width: 50%;
   padding: 10px;
@@ -372,5 +377,6 @@
 
 /* screen */
 
-
-
+@media screen and (min-width:841px){
+  
+}

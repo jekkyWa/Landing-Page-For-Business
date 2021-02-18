@@ -77,11 +77,13 @@ const Content = () => {
           if (i < 4) {
             setNumberSlide(i);
             i++;
+            getId()
           } else {
             setNumberSlide(0);
+           
             i = 1;
           }
-        }, 5000)
+        }, 8000)
       );
     } else {
       setNumberSlide(0);
@@ -123,8 +125,14 @@ const Content = () => {
     sliderTimeFunc();
   }, [update]);
 
-  //content one
 
+
+  //content one
+  if(window.width > 840){
+    return <div>
+      123
+    </div>
+  }
   if (update == 1) {
     return (
       <div className="content-block-one">
@@ -157,6 +165,7 @@ const Content = () => {
             <h1>{`${dataPrintingTwo.join("")}`}</h1>
           </div>
         </div>
+        
         <Footer contentOne={true} selectTwo={selectTwo} />
       </div>
     );

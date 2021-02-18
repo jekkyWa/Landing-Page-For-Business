@@ -53,7 +53,7 @@
 
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 840px) {
   .button-right-block-header {
     color: rgba(0, 0, 0, 0.801);
   }
@@ -67,7 +67,7 @@
   }
 }
 
-@media only screen and (max-device-width: 770px) {
+@media only screen and (max-device-width: 840px) {
   .button-right-block-header {
     color: white;
   }

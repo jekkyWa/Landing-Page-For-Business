@@ -26,7 +26,7 @@ const Footer = ({
 
   const selectNewPage = (numberPage) => {
     const statePage = numberPage == 1 ? true : false;
-    console.log(statePage)
+    console.log(statePage);
     selectTwo(numberPage, statePage);
   };
 
@@ -40,8 +40,6 @@ const Footer = ({
               Number
             </li>
             <li className="number-not-visiable">+375(33)12-34-567</li>
-            <li className="inf-footer">About</li>
-            <li className="inf-footer">Your privacy</li>
             <li className="inf-footer">2021 Web-DEV, INC</li>
           </ul>
         </div>

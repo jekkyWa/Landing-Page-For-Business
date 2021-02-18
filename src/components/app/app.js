@@ -7,7 +7,6 @@ import "./app.css";
 
 const App = () => {
   const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
-  const [a, setA] = useState();
   useEffect(() => {
     const moveCursor = (e) => {
       const x = e.clientX;
@@ -36,15 +35,14 @@ const App = () => {
             />
             <Header />
             <div className="content-page">
-            <Content />
+              <Content />
             </div>
             <div className="page-mobile">
-            <MobileContent />
+              <MobileContent />
             </div>
           </div>
         </div>
       </div>
-     
     </div>
   );
 };
