@@ -51,19 +51,24 @@
   margin-right: 3px;
 }
 
-@media screen and (max-width:600px){
-  .logo-header{
+
+
+@media screen and (max-width: 770px) {
+  .button-right-block-header {
+    color: rgba(0, 0, 0, 0.801);
+  }
+  .logo-header {
     vertical-align: 0.2em !important;
   }
-  .contact-block{
+  .contact-block {
     padding: 1%;
     padding-right: 1%;
-    color: black
+    color: black;
   }
 }
 
-@media screen and (max-width: 770px) {
-  .button-right-block-header{
-    color: rgb(167, 164, 164);
+@media only screen and (max-device-width: 770px) {
+  .button-right-block-header {
+    color: white;
   }
 }

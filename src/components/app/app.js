@@ -7,7 +7,7 @@ import "./app.css";
 
 const App = () => {
   const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
-  const [a,setA] =useState()
+  const [a, setA] = useState();
   useEffect(() => {
     const moveCursor = (e) => {
       const x = e.clientX;
@@ -20,41 +20,32 @@ const App = () => {
     };
   }, []);
 
-  const desktop = window.screen.width > 770 ? <Content/> : <MobileContent/>
-
-
   return (
     <div>
-      {/* <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <ParticleComponent />
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <div
-            className="cursor"
-            style={{
-              transform: `translate3d(${cursorXY.x}px, ${cursorXY.y}px, 0)`,
-            }}
-          /> */}
-          <Header />
-          {desktop}   
+      <div>
+        <div className="page">
+          <div className="particle-effect">
+            <ParticleComponent />
+          </div>
+          <div className="page">
+            <div
+              className="cursor"
+              style={{
+                transform: `translate3d(${cursorXY.x}px, ${cursorXY.y}px, 0)`,
+              }}
+            />
+            <Header />
+            <div className="content-page">
+            <Content />
+            </div>
+            <div className="page-mobile">
+            <MobileContent />
+            </div>
+          </div>
         </div>
-    //   </div>
-    // </div>
+      </div>
+     
+    </div>
   );
 };
 

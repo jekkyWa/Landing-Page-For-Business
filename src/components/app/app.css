@@ -1,11 +1,35 @@
 .cursor {
-    position: fixed;
-    left: -16px;
-    top: -16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    border: 1px solid rgba(2, 0, 0, 0.699);
-    background-color: rgba(255, 255, 255, 0.082);
-    z-index: -1;
+  position: fixed;
+  left: -16px;
+  top: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid rgba(2, 0, 0, 0.699);
+  background-color: rgba(255, 255, 255, 0.082);
+  z-index: -1;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 770px) {
+  .content-page{
+      display: none;
+  }
+  .page-mobile{
+      display: contents;
+  }
+  .particle-effect{
+      visibility: hidden;
+  }
 }

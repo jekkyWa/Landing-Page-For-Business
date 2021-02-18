@@ -89,12 +89,24 @@ const MobileContent = () => {
             className="title-send-mobile"
             placeholder="Enter project subject"
           />
-          <textarea className="title-body-mobile"  placeholder="Enter body subject"/>
+          <textarea
+            className="title-body-mobile"
+            placeholder="Enter body subject"
+          />
           <div>
-          <button className="button-send-mobile">Send project data</button>
+            <button className="button-send-mobile">Send project data</button>
           </div>
         </form>
       </div>
+      {/* <div className="footer-menu-block-mobile">
+        <ul>
+          <li >Number</li>
+          <li >+375(33)12-34-567</li>
+          <li >About</li>
+          <li >Your privacy</li>
+          <li >2021 Web-DEV, INC</li>
+        </ul>
+      </div> */}
     </div>
   );
 };

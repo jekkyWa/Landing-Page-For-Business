@@ -19,12 +19,27 @@ body {
 }
 
 @media screen and (max-width: 770px) {
-  body,
   html {
-    background: linear-gradient(110deg, black, white)
-      no-repeat center !important;
-    overflow: auto !important;
+    background: linear-gradient(110deg, black, white) no-repeat fixed !important;
     background-size: cover !important;
+    height: calc(100% + 60px) !important;
+    min-height: calc(100% + 60px) !important;
+    overflow-y: visible;
+    overflow-x: hidden !important;
+  }
+  body {
+    background: linear-gradient(110deg, black, white) no-repeat fixed !important;
+    background-size: cover;
+    overflow-y: visible;
+    overflow-x: hidden;
+ 
+  }
+}
+
+@media only screen and (max-device-width: 770px) {
+  html {
     height: calc(100% + 60px);
+    min-height: calc(100% + 60px);
+    background:black !important ;
   }
 }
