@@ -77,10 +77,10 @@ const Content = () => {
           if (i < 4) {
             setNumberSlide(i);
             i++;
-            getId()
+            getId();
           } else {
             setNumberSlide(0);
-           
+
             i = 1;
           }
         }, 8000)
@@ -112,7 +112,7 @@ const Content = () => {
       setTerminalFirstTimeoutId(
         setTimeout(() => {
           printing(_arrOne, setDataPrintingOne);
-        }, 2000)
+        }, 2500)
       );
     } else {
       setTimeout(() => {
@@ -126,13 +126,7 @@ const Content = () => {
   }, [update]);
 
 
-
   //content one
-  if(window.width > 840){
-    return <div>
-      123
-    </div>
-  }
   if (update == 1) {
     return (
       <div className="content-block-one">
@@ -165,7 +159,7 @@ const Content = () => {
             <h1>{`${dataPrintingTwo.join("")}`}</h1>
           </div>
         </div>
-        
+
         <Footer contentOne={true} selectTwo={selectTwo} />
       </div>
     );
@@ -182,7 +176,7 @@ const Content = () => {
               {" "}
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={500}
+                animationInDuration={600}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -192,7 +186,7 @@ const Content = () => {
             <p>
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={600}
+                animationInDuration={700}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -203,7 +197,7 @@ const Content = () => {
             <h1>
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={500}
+                animationInDuration={600}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -214,7 +208,7 @@ const Content = () => {
               {" "}
               <Animated
                 animationIn="fadeInRight"
-                animationInDuration={600}
+                animationInDuration={700}
                 animationOutDuration={1000}
                 isVisible={true}
               >
@@ -225,7 +219,7 @@ const Content = () => {
           <div className="col-6 contnet-two-body-img">
             <Animated
               animationIn="fadeInLeft"
-              animationInDuration={700}
+              animationInDuration={800}
               animationOutDuration={1000}
               isVisible={true}
             >
@@ -248,7 +242,7 @@ const Content = () => {
           <div className="col-6">
             <Animated
               animationIn="fadeInRight"
-              animationInDuration={400}
+              animationInDuration={600}
               animationOutDuration={1000}
               isVisible={true}
               className="sample-project"
@@ -257,7 +251,7 @@ const Content = () => {
             </Animated>
             <Animated
               animationIn="fadeInRight"
-              animationInDuration={400}
+              animationInDuration={600}
               animationOutDuration={1000}
               isVisible={true}
               className="row slider"
@@ -303,7 +297,7 @@ const Content = () => {
             </Animated>
             <Animated
               animationIn="fadeInRight"
-              animationInDuration={400}
+              animationInDuration={600}
               animationOutDuration={1000}
               isVisible={true}
               className="description"
@@ -320,7 +314,7 @@ const Content = () => {
             </Animated>
             <Animated
               animationIn="fadeInRight"
-              animationInDuration={400}
+              animationInDuration={600}
               animationOutDuration={1000}
               isVisible={true}
               className="slider-icons"
@@ -384,7 +378,7 @@ const Content = () => {
           </div>
           <Animated
             animationIn="fadeInLeft"
-            animationInDuration={400}
+            animationInDuration={700}
             animationOutDuration={1000}
             isVisible={true}
             className="col-6 img-project"
@@ -489,7 +483,8 @@ const Content = () => {
       <div className="container-fluid send-form">
         <Animated
           animationIn="fadeIn"
-          animationInDuration={1000}
+          animationInDuration={1500}
+          animationInDelay={100}
           isVisible={true}
           className="send-request"
         >

@@ -24,7 +24,8 @@
 
 @media screen and (max-width: 840px) {
   .content-page{
-      display: none;
+      visibility: hidden;
+      position: fixed;
   }
   .page-mobile{
       display: contents;

@@ -58,36 +58,32 @@
 
 .one {
   opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
-  transition: 1s; /*Скорость перехода состояния элемента*/
-  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation: show 2.5s 1; /* Указываем название анимации, её время и количество повторов*/
   animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
-  animation-delay: 0.4s; /* Задержка перед началом */
+  animation-delay: 0.5s; /* Задержка перед началом */
 }
 
 .two {
   opacity: 0;
-  transition: 1s;
-  animation: show 2s 1;
+  animation: show 2.5s 1;
   animation-fill-mode: forwards;
-  animation-delay: 0.8s;
+  animation-delay: 1s;
   margin-left: 15px;
 }
 
 .three {
   opacity: 0;
-  transition: 1.5s;
-  animation: show 2s 1;
+  animation: show 2.5s 1;
   animation-fill-mode: forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1.5s;
   margin-left: 15px;
 }
 
 .four {
   opacity: 0;
-  transition: 1.5s;
-  animation: show 2s 1;
+  animation: show 2.5s 1;
   animation-fill-mode: forwards;
-  animation-delay: 1.6s;
+  animation-delay: 2s;
   margin-left: 15px;
 }
 
@@ -129,7 +125,7 @@
   text-align: center;
   margin-left: 50px;
   margin-top: 70px;
-  font-size: calc(20px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));;
+  font-size: calc(20px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));
 }
 
 .contnet-two-body > p {
@@ -161,7 +157,6 @@
 
 .sample-project {
   margin-top: 40px;
-  
 }
 
 .sample-project > h1 {
@@ -234,7 +229,6 @@
 .description-img > h2 {
   color: rgb(0, 0, 0);
   font-family: Quicksand-Bold;
-  
 }
 
 .hidden-description {
@@ -254,14 +248,14 @@
 
 .active-description-right {
   opacity: 0;
-  transition: 0.4s;
+
   animation: fadeRight 0.7s 1;
   animation-fill-mode: forwards;
 }
 
 .active-description-left {
   opacity: 0;
-  transition: 0.4s;
+
   animation: fadeLeft 0.7s 1;
   animation-fill-mode: forwards;
 }
@@ -322,15 +316,16 @@
 
 .send-form {
   background-color: rgba(0, 0, 0, 0.404);
-  width: 50%;
+  width: 43.5%;
   padding: 10px;
   border: 1px solid black;
   border-radius: 2px;
+  margin-top: 3%;
 }
 
 .send-request {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .send-request > h1 {
@@ -338,6 +333,7 @@
   color: white;
   width: 100%;
   margin-left: 0%;
+  font-size: calc(18px + (28 - 14) * ((100vw - 480px) / (1024 - 480)));
 }
 
 .title-send {
@@ -347,7 +343,7 @@
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-family: Quicksand-Light;
   color: black;
-  font-size: 1.2em;
+  font-size: calc(10px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
   margin-top: 20px;
 }
 
@@ -359,9 +355,9 @@
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-family: Quicksand-Light;
   color: black;
-  font-size: 1.2em;
+  font-size: calc(10px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
   resize: none;
-  height: 200px;
+  height: 150px;
 }
 
 .button-send {
@@ -371,12 +367,7 @@
   background-color: rgba(29, 29, 29, 0.815);
   color: white;
   font-family: Quicksand-Light;
-  font-size: 1.2em;
+  font-size: calc(10px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
   border: 1px solid rgba(124, 124, 124, 0.877);
 }
 
-/* screen */
-
-@media screen and (min-width:841px){
-  
-}
